@@ -845,7 +845,7 @@ class Calendar extends BaseGadget {
                 //this.contextMenu.toggle(e);
             };
 
-            leftIcon = (<i className="fa fa-ellipsis-v pull-left" title="Show options" onClick={contextEvent} event-icon="true"></i>);
+            leftIcon = (<i className="fa fa-ellipsis-v pull-right" title="Show options" onClick={contextEvent} event-icon="true"></i>);
         }
         else if (entryType === 2) {
             const m = srcObj;
@@ -865,11 +865,11 @@ class Calendar extends BaseGadget {
             };
 
             if (!hasWorklog) {
-                leftIcon = (<i className="fa fa-clock-o pull-left" title="Create worklog for this meeting" event-icon="true"
+                leftIcon = (<i className="fa fa-clock-o pull-right" title="Create worklog for this meeting" event-icon="true"
                     onClick={(e) => { e.stopPropagation(); this.createWorklog(e, m, this.defaultMeetingTicket); }}></i>);
             }
             else {
-                leftIcon = <i className="fa fa-ellipsis-v pull-left" title="Show options" onClick={contextEvent} event-icon="true"></i>;
+                leftIcon = <i className="fa fa-ellipsis-v pull-right" title="Show options" onClick={contextEvent} event-icon="true"></i>;
             }
         }
 
@@ -878,14 +878,14 @@ class Calendar extends BaseGadget {
             const clsName = (lines * 30 > srcObj.totalMins ? ' short-desc' : '');
 
             return (<div ref={(e) => e?.parentElement?.parentElement?.addEventListener('contextmenu', contextEvent)}
-                className="fc-content pad-8" title={title} data-jira-key={srcObj?.ticketNo} data-jira-wl-id={srcObj?.worklogId}>
+                className="fc-content pad-4" title={title} data-jira-key={srcObj?.ticketNo} data-jira-wl-id={srcObj?.worklogId}>
                 {entryType === 1 && <WorklogOptions worklog={srcObj} onUpload={this.uploadSelectedWorklog} onClone={this.cloneWorklog} />}
                 {leftIcon}
+                <div className={`fc-title${clsName}`}>{evTitle}</div>
                 <div className="fc-time">
-                    <span>{timeText}</span>
+                    {/*<span>{timeText}</span>*/}
                     <span className="fc-hour"> {hourDiff}</span>
                 </div>
-                <div className={`fc-title${clsName}`}>{evTitle}</div>
                 {!!subTitle && <div className={`fc-sub-title${clsName}`} title={subTitle}>{subTitle}</div>}
             </div>);
         }

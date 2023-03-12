@@ -8,18 +8,12 @@
   display: block;
 
   .fc-title {
-    margin-top: 5px;
-    font-size: 15px;
-    margin-bottom: 16px;
-    max-height: 80px;
+    font-size: 11px;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 
     &.short-desc {
-      max-height: 40px;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
   }
@@ -62,12 +56,8 @@
 }
 
 .fc-time .fc-hour {
-  font-size: 12px;
-  margin-left: 8px;
-  padding: 1px 4px 1px 1px;
-  color: #000;
-  background: rgba(255, 255, 255, 0.8);
-  display: inline-block;
+  font-size: 10px;
+  color: #fffc;
 }
 
 .fc .ui-state-highlight {
@@ -208,4 +198,25 @@
 
 .cal-row-banding .fc-timegrid-slots table tbody tr:nth-of-type(even) {
   background-color: #8dcdff21 !important;
+}
+
+.fc-timegrid-event-harness-inset .fc-timegrid-event,
+.fc-timegrid-event.fc-event-mirror, .fc-timegrid-more-link {
+  box-shadow: none;
+}
+
+.fc .fc-timegrid-slot-label-cushion {
+  font-size: 10px;
+}
+
+.fc.fc-theme-standard .fc-view-harness .fc-scrollgrid {
+  border: none;
+}
+
+.fc table {
+  font-size: 10px;
+}
+
+.fc-event-main {
+  font-size: 11px;
 }
